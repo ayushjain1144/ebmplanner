@@ -1,0 +1,48 @@
+# Evaluation
+
+defaults:
+  - config
+
+hydra:
+  run:
+    dir: ./
+
+mode: test # 'val' or 'test'
+
+# eval settings
+agent: transporter
+n_demos: 50 # number of val instances
+train_demos: 100 # training demos used to train model
+n_repeats: 1 # number of repeats
+gpu: [0]
+save_results: True # write results to json
+update_results: False # overwrite existing json results?
+checkpoint_type: 'test_best'
+val_on_heldout: True
+
+disp: False
+shared_memory: False
+eval_task: put-block-in-bowl-seen-colors # task to evaluate the model on
+model_task: ${eval_task} # task the model was trained on (e.g. multi-language-conditioned or packing-boxes-pairs-seen-colors)
+type: single # 'single' or 'multi'
+
+# paths
+model_dir: ./
+exp_folder: exps
+data_dir: /projects/katefgroup/ns_transporter_data/offline_new3
+assets_root: environments/assets/
+
+model_path: /projects/katefgroup/ns_transporter_data/multi-language-conditioned-transporter-n100-train/checkpoints/ # path to pre-trained models
+train_config: /projects/katefgroup/ns_transporter_data/multi-language-conditioned-transporter-n100-train/.hydra/config.yaml # path to train config
+save_path: /projects/katefgroup/ns_transporter_data/multi-language-conditioned-transporter-n100-train/checkpoints/ # path to save results
+results_path: /projects/katefgroup/ns_transporter_data/multi-language-conditioned-transporter-n100-train/checkpoints/ # path to existing results
+
+
+# record videos (super slow)
+record:
+  save_video: False
+  save_video_path: /projects/katefgroup/ns_transporter_data/videos_compose_one/
+  add_text: False
+  fps: 25
+  video_height: 320
+  video_width: 640
