@@ -2,7 +2,7 @@
 
 By [Nikolaos Gkanatsios*](https://nickgkan.github.io/), [Ayush Jain*](https://ayushjain1144.github.io/), [Zhou Xian](https://www.zhou-xian.com/), [Yunchu Zhang](https://github.com/YunchuZhang), [Christopher G. Atkeson](http://www.cs.cmu.edu/~cga/),  [Katerina Fragkiadaki](https://www.cs.cmu.edu/~katef/).
 
-Official implementation of ["Energy-based Models are Zero-Shot Planners for Compositional Scene Rearrangement"](https://arxiv.org/abs/2304.14391), accepted by RSS 2023.
+Official implementation of ["Energy-based Models are Zero-Shot Planners for Compositional Scene Rearrangement"](https://arxiv.org/abs/2304.14391), RSS 2023.
 
 ![teaser](https://ebmplanner.github.io/static/images/model.png)
 
@@ -21,7 +21,7 @@ We showcase the installation for CUDA 11.1 and torch==1.10.2, which is what we u
 
 ### Data Preparation
 
-For generating simulation data for our benchmarks, execute
+For generating simulation data for our benchmarks, run
 - python demos.py
 
 This will generate data for cliport tasks, spatial relations, shapes and compositional benchmarks. If you want to generate data for a specific benchmark, you can comment out the rest from `task_list`
